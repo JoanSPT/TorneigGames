@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Torneig Gamer</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+    <<script src="js/jquery-min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/index.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+    crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="col-md-12">
+      <div class="col-md-12">
+    <h1 class="col-md-12 text-center">Torneig Gamer</h1>
+
+    <!-- FUNCIÓN DEL CARRUSEL-->
+    <div id="myCarousel" class="carousel slide col-md-12 text-center" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+      </ol>
+
+      <div class="carousel-inner ">
+        <div class="item active">
+          <img src="img/1.jpg" class="img-responsive" alt="Chania">
+        </div>
+        <div class="item">
+          <img src="img/2.jpg" class="img-responsive" alt="Chania">
+        </div>
+        <div class="item">
+          <img src="img/3.jpg" class="img-responsive" alt="Chania">
+        </div>
+        <div class="item">
+          <img src="img/4.jpg" class="img-responsive" alt="Chania">
+        </div>
+        <div class="item">
+          <img src="img/5.jpg" class="img-responsive" alt="Chania">
+        </div>
+        <div class="item">
+          <img src="img/6.jpg" class="img-responsive" alt="Chania">
+        </div>
+        <div class="item">
+          <img src="img/7.jpg" class="img-responsive" alt="Chania">
+        </div>
+      </div>
+
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <ul class="nav nav-tabs col-md-12">
+      <li class="active"><a data-toggle="tab" href="#home">Gestió de jocs</a></li>
+      <li><a data-toggle="tab" href="#jugadors">Jugadors</a></li>
+      <li><a data-toggle="tab" href="#torneigs">Torneig</a></li>
+    </ul>
+
+
+    <!-- FUNCIÓN DEL FORMULARIO PARA JUEGOS -->
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active col-md-12">
+
+
+        <form class="form-horizontal" action="#" id="frm-game" name="frm-game" method="post">
+          <input type="hidden" id="game_id" name="id" value=""/>
+            <h3>Fitxa joc</h3>
+
+            <div class="row">
+
+            <div class="col-md-4">
+              <label for="game_name">Titol</label>
+              <input type="text" name="" class="form-control" value="" id="game_name">
+              <div class="invalid-feedback"><small>Nom del joc obligatori</small></div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="game_release">Any de llançament</label>
+              <input type="date" name="" value="" class="form-control" id="game_release">
+              <div class="invalid-feedback"><small>Data de llançament obligatori</small></div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="game_pegi">Pegi</label>
+              <select class="form-control" id="game_pegi">
+                <option value="+3">+3</option>
+                <option value="+7">+7</option>
+                <option value="+12">+12</option>
+                <option value="+16">+16</option>
+                <option value="+18">+18</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+
+          <div class="col-md-6">
+            <label for="game_dev">Companyia desenvolupat</label>
+              <input type="text" name="" id="game_dev" class="form-control">
+              <div class="invalid-feedback"><small>Nom de la companyia obligatori</small></div>
+          </div>
+
+          <div class="col-md-6">
+          <label for="game_genr">Genere</label>
+              <select id="game_genr" class="form-control">
+                <option value="Accio">Acció</option>
+                <option value="Aventura">Aventura</option>
+                <option value="third">third person</option>
+                <option value="RPG">RPG</option>
+                <option value="Plataformas">Plataformas</option>
+                <option value="First person">First person</option>
+                <option value="ROL">ROL</option>
+                <option value="Beat'em">Beat'em</option>
+                <option value="lluita">lluita</option>
+                <option value="mon obert">mon obert</option>
+                <option value="musica/ball">musica/ball</option>
+                <option value="Carreras">Carreras</option>
+                <option value="Shooters">Shooters</option>
+              </select>
+            </div>
+          </div>
+          </form>
+          <br>
+        <button type="button" id="b_addGame" name="button" class="btn btn-default pull-right col-md-1" onclick="addGame()">Publicar</button>
+
+        <h3>Llista jocs</h3>
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Titol</th>
+                <th>Any</th>
+                <th>PEGI</th>
+                <th>dev</th>
+                <th>Genere</th>
+              </tr>
+            </thead>
+            <tbody id="listGame">
+
+            </tbody>
+          </table>
+      </div>
+
+      <!-- JUGADORES -->
+      <div id="jugadors" class="tab-pane fade col-md-12">
+
+
+        <form class="form-horizontal" id="frm-player" name="frm-player" action="#" method="post">
+
+        <input type="hidden" id="player_id" name="id" value=""/>
+          <h3>Fitxa jugador</h3>
+
+          <div class="row">
+          <div class="col-md-3">
+            <label for="player_name">Nom</label>
+            <input type="text" id="player_name" name="nom" class="form-control" values="">
+            <div class="invalid-feedback"><small>Nom obligatori</small></div>
+          </div>
+
+          <div class="col-md-3">
+            <label for="player_lname">Llinatge  </label>
+            <input type="text" id="player_lname" name="player_lname" class="form-control" values="">
+            <div class="invalid-feedback"><small>Llinatge obligatori</small></div>
+          </div>
+
+          <div class="col-md-3">
+            <label for="player_username">Nom del jugador</label>
+            <input type="text" id="player_username" class="form-control" name="player_username" values="">
+            <div class="invalid-feedback"><small>Nom del jugador obligatori</small></div>
+          </div>
+
+          <div class="col-md-3">
+            <label for="player_dni">DNI</label>
+            <input type="text" id="player_dni" class="form-control" name="player_dni" values="">
+            <div class="invalid-feedback"><small>DNI obligatori</small></div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4">
+            <label for="player_date">Data naixement</label>
+            <input type="date" id="player_date" class="form-control" name="player_date" values="">
+            <div class="invalid-feedback"><small>Data de naixament obligatori</small></div>
+          </div>
+          <div class="col-md-4">
+            <label for="player_phone">Telefon</label>
+            <input type="text" id="player_phone" class="form-control" name="player_phone" values="">
+            <div class="invalid-feedback"><small>Telefon obligatori</small></div>
+          </div>
+          <div class="col-md-4">
+            <label for="player_mail">Email</label>
+            <input type="text" id="player_mail" class="form-control" name="player_mail" values="">
+            <div class="invalid-feedback"><small>Email obligatori</small></div>
+          </div>
+        </div>
+        </form>
+        <br>
+        <button type="button" name="button" id="b_addPlayer" class="btn btn-default pull-right col-md-1" onclick="addPlayer()">Enviar</button>
+
+        <h3>Llista jugadors</h3>
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>nom</th>
+                <th>llintage</th>
+                <th>nom del jugador</th>
+                <th>email</th>
+              </tr>
+            </thead>
+            <tbody id="listPlayer">
+
+            </tbody>
+          </table>
+      </div>
+      <div id="torneigs" class="tab-pane fade col-md-12">
+
+      <!-- TORNEO -->
+        <form class="form-horizontal" id="frm-tour" name="frm-tour" action="#" method="post">
+          <h3>Fitxa torneig</h3>
+          <input type="hidden" id="player_id" name="id" value=""/>
+
+            <div class="row">
+            <div class="col-md-4">
+              <label for="tour_name">Torneig  </label>
+              <input type="text" id="tour_name" name="tour_name" values="" class="form-control">
+              <div class="invalid-feedback"><small>Nom del torneig obligatori</small></div>
+            </div>
+            <div class="col-md-4">
+              <label for="tour_game">Joc  </label>
+              <input type="text" id="tour_game" name="tour_game" values="" class="form-control">
+              <div class="invalid-feedback"><small>Titol del joc obligatori</small></div>
+            </div>
+            <div class="col-md-4">
+              <label for="tour_day">dia  </label>
+              <input type="date" id="tour_day" name="tour_day" values="" class="form-control">
+              <div class="invalid-feedback"><small>Data obligatori</small></div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="tour_hour">hora  </label>
+              <input type="time" id="tour_hour" name="tour_hour" values="" class="form-control">
+              <div class="invalid-feedback"><small>Hora obligatori</small></div>
+            </div>
+            <div class="col-md-6">
+              <label for="tour_max">maxim de places  </label>
+              <input type="text" id="tour_max" name="tour_max" values="" class="form-control">
+              <div class="invalid-feedback"><small>Num. places obligatoria</small></div>
+            </div>
+          </div>
+        </form>
+        <br>
+        <button type="button" id="b_addTour" name="button" class="btn btn-default pull-right col-md-1" onclick="addTour()">Publicar</button>
+        <h3>Llista torneigs</h3>
+
+        <table class="table table-condensed">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Torneig</th>
+              <th>Joc</th>
+              <th>Dia</th>
+              <th>hora</th>
+              <th>maxim de places</th>
+            </tr>
+          </thead>
+          <tbody id="listTour">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="modal-message" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="example">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title pepeto" id="exampleModalscrollableTitle">Avís</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </buttom>
+          </div>
+          <div id="txt-message" class="modal-body pepeto">
+              Tots els camps són obligatoris
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Tanca</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="py-5 text-center">(c) Joan Sebastia Peña Torres 2019</footer>
+  </div>
+</div>
+
+
+
+
+  </body>
+</html>
