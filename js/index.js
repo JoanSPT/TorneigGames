@@ -1,7 +1,10 @@
+//Arrays de las listas
+
 let listGames = [];
 let listPlayers = [];
 let listTours = [];
 
+//Clase Game
 class Game{
   constructor(num, title, release, pegi, dev, type){
     this.num=num;
@@ -14,8 +17,8 @@ class Game{
 
 }
 
-//
 
+//Clase Player
 class Player{
 
   constructor(num, name, surname, gamer, dni, date, phone, email){
@@ -30,6 +33,7 @@ class Player{
   }
 }
 
+//Clase Torneo
 class Tour{
 
   constructor(num, torneig, joc, dia, hora, mplaces){
@@ -42,6 +46,7 @@ class Tour{
   }
 }
 
+//Para dibujar las tablas de la lista de juegos
 function printTableGame(lGames){
 
   let bodyListGame = document.getElementById("listGame");
@@ -62,6 +67,7 @@ function printTableGame(lGames){
     });
 }
 
+//Para dibujar la tabla de la lista de los jugadores
 function printTablePlayes(lPlayers){
 
   let bodyListPlayer = document.getElementById("listPlayer");
@@ -81,6 +87,7 @@ function printTablePlayes(lPlayers){
     });
 }
 
+//Para dibujar la tabla para la lista de torneos
 function printTableTournament(lTours){
 
   let bodyListTour = document.getElementById("listTour");
@@ -103,6 +110,7 @@ function printTableTournament(lTours){
 
 }
 
+//Validar el formulario de juegos
 function validateGameForm(){
   const elements = document.getElementById("frm-game").elements;
   for (let e of elements) {
@@ -115,11 +123,13 @@ function validateGameForm(){
   return true;
 }
 
+//Generador de mensajes y avisos
 function message(msg){
   $("#txt-message").html(msg);
   $('#modal-message').modal('show');
 }
 
+//Para comprobar si el juego esta repetido
 function isRepeatedGame(nameGame){
   for(let game in listGames) {
       if (game.name == nameGame) return true;
@@ -127,6 +137,7 @@ function isRepeatedGame(nameGame){
   return false;
 }
 
+//La función de añadir el juego a la tabla
 function addGame(){
   console.log("action:nou joc");
   if(!validateGameForm()) return false;
@@ -157,6 +168,7 @@ function addGame(){
   }
 }
 
+//Para evitar la repetición de inscribir el jugador. 
 function isRepeatedPlayer(dniPlayer){
   for(let player in listPlayers) {
       if (player.dni == dniPlayer) return true;
@@ -164,6 +176,7 @@ function isRepeatedPlayer(dniPlayer){
   return false;
 }
 
+//Para validar el nombre del jugador
 function validatePlayerForm(){
   const elements = document.getElementById("frm-player").elements;
   for (let e of elements) {
@@ -176,6 +189,7 @@ function validatePlayerForm(){
   return true;
 }
 
+//La función de añadir el jugador a la tabla
 function addPlayer(){
   console.log("action:nou jugador");
   if(!validatePlayerForm()) return false;
@@ -199,13 +213,13 @@ function addPlayer(){
 
     listPlayers.push(oPlayer);
 
-    /*console.log("info-add:"+oGame.print());*/
     document.forms["frm-player"].reset();
 
     printTablePlayes(listPlayers.lPlayers);
   }
 }
 
+//Para identificar si el titulo del torneo esta repetido
 function isRepeatedTour(nameTour){
   for(let tour in listTours) {
       if (tour.name == nameTour) return true;
@@ -213,6 +227,7 @@ function isRepeatedTour(nameTour){
   return false;
 }
 
+//Para validar el formulario de torneos
 function validateTourForm(){
   const elements = document.getElementById("frm-tour").elements;
   for (let e of elements) {
@@ -225,6 +240,7 @@ function validateTourForm(){
   return true;
 }
 
+//La función de añadir el torneo a la tabla
 function addTour(){
   console.log("action:nou torneig");
   if(!validateTourForm()) return false;
@@ -246,7 +262,6 @@ function addTour(){
 
     listTours.push(oTour);
 
-    /*console.log("info-add:"+oGame.print());*/
     document.forms["frm-tour"].reset();
 
     printTableTournament(listTours.lTours);
